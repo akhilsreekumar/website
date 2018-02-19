@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .api.serializer import TemperSerializer
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Temper
 
@@ -12,3 +12,13 @@ def sensors_get(request, pk):
         temp = Temper(value=pk)
         temp.save()
         return HttpResponse(temp.value)
+
+@csrf_exempt
+def sensors(request):
+    """
+    List all code snippets, or create a new snippet.
+    """
+    if request.method == 'GET':
+        temps = Temper.objects.all()
+        serializer = TemperSerializer(temps, many=True)
+        return JsonResponse(serializer.data, safe=False)
