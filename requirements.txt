@@ -1,8 +1,2 @@
-certifi (2017.11.5)
 Django (1.11.8)
 djangorestframework (3.7.7)
-pip (9.0.1)
-pytz (2017.3)
-setuptools (36.5.0.post20170921)
-wheel (0.30.0)
-wincertstore (0.2)
