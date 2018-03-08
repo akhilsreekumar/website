@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="container">
+<h1>{{title}}</h1>
+<div class="row">
+    <div class="col-md-3">
+        <h2>Glucose</h2>
+        <ul>
+          {% for i in glucos %}
+            <li>{{i.created}}  ----  {{i.value}}</li>
+          {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Heart Beat</h2>
+        <ul>
+          {% for i in heart %}
+            <li>{{i.created}}  ----  {{i.value}}</li>
+          {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Pressure</h2>
+        <ul>
+          {% for i in press %}
+            <li>{{i.created}}  ----  {{i.value}}</li>
+          {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Temperature</h2>
+        <ul>
+          {% for i in temps %}
+            <li>{{i.created}}  ----  {{i.value}}</li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock main %}

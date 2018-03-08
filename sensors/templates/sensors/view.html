@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="container">
+<h1>{{title}}</h1>
+<div class="container">
+<ul>
+  {% for i in values %}
+    <li>{{i.created}}  ----  {{i.value}}</li>
+  {% endfor %}
+</ul>
+</div>
+</div>
+{% endblock main %}
